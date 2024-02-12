@@ -1,0 +1,23 @@
+.header-container {
+	width: auto;
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 25px;
+}
+
+.icons-container {
+	width: auto;
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.icons-container img {
+	width: 40px;
+	height: 40px;
+}
+
+.icons-container img:last-child {
+	width: 20px;
+	height: 20px;
+}
