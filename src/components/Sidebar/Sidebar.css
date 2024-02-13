@@ -14,7 +14,8 @@
 	gap: 20px;
 }
 .navlink-container a,
-.action-container {
+.action-container,
+.dropdown button {
 	color: #ffffff;
 	font-size: 14px;
 	font-weight: 600;
@@ -23,7 +24,24 @@
 	padding: 6px 16px;
 	display: flex;
 	gap: 16px;
+	background-color: transparent !important;
+	border: none !important;
+}
+.dropdown button::after {
+	display: none !important;
+}
+.dropdown button {
+	width: 100% !important;
+	text-align: left;
 }
 .navlink-container .active {
 	background-color: #4e9d8e;
+}
+.action-menu-container {
+	background-color: transparent !important;
+	border: none !important;
+}
+.action-menu {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
