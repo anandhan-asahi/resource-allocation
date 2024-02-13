@@ -161,6 +161,7 @@ const Dashboard = () => {
 				return;
 			}
 			let selectedResourcesindexes = [];
+			let nonSelectedResourcesindexes = [];
 			availableResources.map(
 				(availableResource, availableResourceIndex) => {
 					return currentSelectedRows.map((currentSelectedRowId) => {
@@ -172,6 +173,7 @@ const Dashboard = () => {
 					});
 				}
 			);
+			console.log(selectedResourcesindexes, "selectedResourcesindexes");
 
 			let currentAllocatedValues = [...allocatedValues];
 			const updatedAllocatedValues = currentAllocatedValues.map(
@@ -184,10 +186,6 @@ const Dashboard = () => {
 							currentAllocatedValueIndex
 						)
 					) {
-						console.log(
-							currentAllocatedValueIndex,
-							"currentAllocatedValueIndex"
-						);
 						currentAllocatedValue = 500;
 						return currentAllocatedValue;
 					} else {
@@ -195,6 +193,16 @@ const Dashboard = () => {
 					}
 				}
 			);
+			const updatedAllocatedValuesIndexes = updatedAllocatedValues.map(
+				(ele, index) => index
+			);
+			const nonSelectedIndexes = updatedAllocatedValuesIndexes.filter(
+				(item) => !selectedResourcesindexes.includes(item)
+			);
+			nonSelectedIndexes.forEach((res) => {
+				updatedAllocatedValues[res] = 500;
+			});
+
 			setAllocatedValues([...updatedAllocatedValues]);
 			let currentNonAllocatedValues = [...nonAllocatedValues];
 			const updatedNonAllocatedValues = currentNonAllocatedValues.map(
@@ -207,10 +215,6 @@ const Dashboard = () => {
 							currentNonAllocatedValueIndex
 						)
 					) {
-						console.log(
-							currentNonAllocatedValueIndex,
-							"currentNonAllocatedValueIndex"
-						);
 						currentNonAllocatedValue = 500;
 						return currentNonAllocatedValue;
 					} else {
@@ -218,6 +222,9 @@ const Dashboard = () => {
 					}
 				}
 			);
+			nonSelectedIndexes.forEach((res) => {
+				updatedNonAllocatedValues[res] = 500;
+			});
 			setNonAllocatedValues([...updatedNonAllocatedValues]);
 		}
 	};
