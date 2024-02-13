@@ -13,7 +13,6 @@ const Sidebar = () => {
 					<img src={DashboardIcon} alt="Dashboard" />
 					Dashboard
 				</NavLink>
-
 				<Dropdown>
 					<Dropdown.Toggle className="action-container">
 						<img src={AnalyticsIcon} alt="Analytics" />
