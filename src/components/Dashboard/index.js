@@ -161,7 +161,6 @@ const Dashboard = () => {
 				return;
 			}
 			let selectedResourcesindexes = [];
-			let nonSelectedResourcesindexes = [];
 			availableResources.map(
 				(availableResource, availableResourceIndex) => {
 					return currentSelectedRows.map((currentSelectedRowId) => {
