@@ -13,7 +13,8 @@
 	text-align: left;
 	gap: 20px;
 }
-.navlink-container a {
+.navlink-container a,
+.action-container {
 	color: #ffffff;
 	font-size: 14px;
 	font-weight: 600;

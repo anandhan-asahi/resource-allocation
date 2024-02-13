@@ -11,10 +11,10 @@ const Sidebar = () => {
 					<img src={DashboardIcon} alt="Dashboard" />
 					Dashboard
 				</NavLink>
-				<NavLink to={"/analytics"}>
+				<div className="action-container">
 					<img src={AnalyticsIcon} alt="Analytics" />
 					Analytics
-				</NavLink>
+				</div>
 			</div>
 		</div>
 	);

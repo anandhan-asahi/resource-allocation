@@ -274,13 +274,15 @@ const Dashboard = () => {
 					})}
 				</div>
 			</div>
-			<div className="container mt-4">
+			<div className="container mt-5">
 				<div className="row">
-					<div className="col-lg-5">
-						<p className="table-heading">Allocations per day</p>
-						<Bar options={options} data={data} height={200} />
+					<div className="col-lg-5" style={{ paddingRight: "35px" }}>
+						<div className="graph-container">
+							<p className="table-heading">Allocations per day</p>
+							<Bar options={options} data={data} height={200} />
+						</div>
 					</div>
-					<div className="col-lg-7">
+					<div className="col-lg-7 graph-container">
 						<p className="table-heading">Resources Available</p>
 						<table className="table">
 							<thead>
