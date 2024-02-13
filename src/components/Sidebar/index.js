@@ -40,14 +40,14 @@ const Sidebar = () => {
 					<Dropdown.Menu className="action-menu-container">
 						<Dropdown.Item
 							className="action-container action-menu"
-							href="#/action-1"
+							href="/add-a-connection"
 						>
 							<img src={AddConnectionIcon} alt="Analytics" />
 							Add a connection
 						</Dropdown.Item>
 						<Dropdown.Item
 							className="action-container action-menu"
-							href="#/action-2"
+							href="/saved-connection"
 						>
 							<img src={SavedConnectionIcon} alt="Analytics" />
 							Saved connections
