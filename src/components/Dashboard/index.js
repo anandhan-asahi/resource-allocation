@@ -160,12 +160,14 @@ const Dashboard = () => {
 				setNonAllocatedValues(initialNonAllocatedValues);
 				return;
 			}
-			let selectedResourcesindex = availableResources.map(
+			let selectedResourcesindexes = [];
+			availableResources.map(
 				(availableResource, availableResourceIndex) => {
 					return currentSelectedRows.map((currentSelectedRowId) => {
 						if (availableResource.id === currentSelectedRowId) {
-							console.log(availableResource.id);
-							return availableResourceIndex;
+							selectedResourcesindexes.push(
+								availableResourceIndex
+							);
 						}
 					});
 				}
@@ -177,8 +179,18 @@ const Dashboard = () => {
 					if (currentAllocatedValueIndex === index) {
 						currentAllocatedValue = resource.metrics;
 						return currentAllocatedValue;
-					} else if (!selectedResourcesindex.flat().includes(index)) {
+					} else if (
+						!selectedResourcesindexes.includes(
+							currentAllocatedValueIndex
+						)
+					) {
+						console.log(
+							currentAllocatedValueIndex,
+							"currentAllocatedValueIndex"
+						);
 						currentAllocatedValue = 500;
+						return currentAllocatedValue;
+					} else {
 						return currentAllocatedValue;
 					}
 				}
@@ -190,8 +202,18 @@ const Dashboard = () => {
 					if (currentNonAllocatedValueIndex === index) {
 						currentNonAllocatedValue = 0;
 						return currentNonAllocatedValue;
-					} else if (!selectedResourcesindex.flat().includes(index)) {
+					} else if (
+						!selectedResourcesindexes.includes(
+							currentNonAllocatedValueIndex
+						)
+					) {
+						console.log(
+							currentNonAllocatedValueIndex,
+							"currentNonAllocatedValueIndex"
+						);
 						currentNonAllocatedValue = 500;
+						return currentNonAllocatedValue;
+					} else {
 						return currentNonAllocatedValue;
 					}
 				}
